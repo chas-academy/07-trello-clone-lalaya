@@ -1,37 +1,57 @@
 body {
-    margin: 20px; 
     background-color: #FFD3DA;
+    padding: 30px;
 }
 
 h1 {
     font-family: 'Lora', serif;
     font-size: 5em;
     color: #ffffff;
-    margin: 35px;
-
-}
-
-.column {
-    display: flex;
-    flex-wrap: wrap;
 
 }
 
 .board {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+}
+
+.column {
+    width: 20em;
+    background-color: rgba(211, 211, 211, 0.644);
+    height: 20em;
+}
+
+
+.list {
     font-family: 'Tinos', serif;
     color: lightslategray;
-    margin: 20px;
-    padding: 15px;
-    width: 14em;
     height: auto; 
     background-color: white;
     box-shadow: 2px 2px rgba(211, 211, 211, 0.2);
-    flex-direction: row;
+    padding: 15px;
+    margin-top: 20px;
+
 }
 
-.card {
-    margin: 2px;
-    width: 12em; 
-    padding: 15px;
-    background-color: #FFFEF2;
+.column:not(:last-child) {
+    margin-right: 35px;
+    
+
 }
+
+
+.card {
+    margin: 10px auto;
+    width: 90%; 
+    height: 1em;
+    padding: 0.5em;
+    background-color: turquoise;
+}
+
+.remove-card {
+    float: right;
+}
+
+

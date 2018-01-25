@@ -1,5 +1,6 @@
 $(document).ready(function() {
     function initSort() {
+        // Sort card
         $(".list").sortable({
             cursor: "move",
             connectWith: ".list",
@@ -7,6 +8,7 @@ $(document).ready(function() {
             placeholder: "sortable-placeholder",
         });
 
+        // Sort list
         $(".column").sortable({
             cursor: "move",
             connectWith: ".column",
@@ -17,14 +19,19 @@ $(document).ready(function() {
 
     initSort();
 
-    // Remove card on click
-    function initRemoveCard () {
+    function initRemove () {
+        // Remove card on click
         $('.card').on('click', '.remove-card' , function(e){
             $(this).closest('.card').remove()
         });
+    
+        // Remove list on click
+        $('.list').on('click', '.remove-list' , function(e){
+            $(this).closest('.list').remove()
+        });
     }
 
-    initRemoveCard();
-
+    initRemove();
+    
 
 }); 

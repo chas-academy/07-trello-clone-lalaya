@@ -1,19 +1,20 @@
 $(document).ready(function() {
     function initSort() {
         // Sort card
-        $(".list").sortable({
+        $(".card-container").sortable({
             cursor: "move",
-            connectWith: ".list",
+            connectWith: ".card-container",
             helper: "clone",
             placeholder: "sortable-placeholder",
         });
 
         // Sort list
-        $(".column").sortable({
+        $(".board").sortable({
             cursor: "move",
-            connectWith: ".column",
+            connectWith: ".board",
             helper: "clone",
             placeholder: "sortable-placeholder",
+        
         });
     } 
 
@@ -32,6 +33,33 @@ $(document).ready(function() {
     }
 
     initRemove();
-    
+
+
+
+    function addCard(event) {
+        event.preventDefault();
+    }
+
+    var formData = $(event.target).offsetParent().find("form").serializeArray();
+
+
+    dialog = $('.new-card').dialog({
+        autoOpen: false,
+        height: 500,
+        width: 500,
+        modal: true,
+        buttons: {
+            Save: addCard,
+            Cancel: function() {
+                dialog.dialog("close");
+            }
+        }
+
+    });
+
+    $('.new-card').click(function() {
+    dialog.dialog("open"); 
+
+    });
 
 }); 

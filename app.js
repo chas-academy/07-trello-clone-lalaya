@@ -17,14 +17,6 @@ $(document).ready(function() {
         
         });
 
-        // Sort list - think this works better than drag and drop
-        /*$(".board").sortable({
-            cursor: "move",
-            connectWith: ".board",
-            helper: "clone",
-            placeholder: "sortable-placeholder",            
-        }); */
-
         $(".list").draggable({
             snap: ".column"    
         });
@@ -35,7 +27,6 @@ $(document).ready(function() {
     }  
     
     initSort();
-
 
     function initRemove () {
         // Remove card on click
@@ -78,7 +69,6 @@ $(document).ready(function() {
 
     initCreate();
 
-
     // New card container
     var $cardContainer;
 
@@ -100,7 +90,7 @@ $(document).ready(function() {
     dialog = $('#cardForm').dialog({
         autoOpen: false,
         height: 500,
-        width: 500,
+        width: 300,
         modal: true,
         show: {effect: "drop"},
         buttons: {

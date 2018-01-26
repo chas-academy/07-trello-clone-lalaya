@@ -93,3 +93,45 @@ h1 {
 #tab-datepicker {
     list-style: none;
 }
+
+.ui-widget-content,
+.ui-dialog,
+.ui-tabs-nav {
+  background-color: #c3faee;
+  border: none;
+}
+
+.ui-tabs-panel {
+  background-color: white;
+  border-color: white;
+  font-family: "Tinos", serif;
+}
+
+.ui-tabs-anchor {
+  background-color: turquoise;
+  color: white;
+  font-family: "Tinos", serif;
+  font-size: 1.1em;
+  border: white;
+}
+
+#cardName,
+#cardDescription,
+.dateinput {
+  width: 100%; 
+}
+#cardName {
+  display: flex;
+  margin-bottom: 1em; 
+
+}
+
+#cardDescription {
+  display: flex;
+  height: 50%
+}
+
+.dateinput {
+  font-family: sans-serif; 
+  padding: 10px auto;
+}

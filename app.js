@@ -42,17 +42,43 @@ $(document).ready(function() {
 
     initRemove();
 
+   
+    var $editMode;
+    var $editCard;
 
-    // Card 
+    function initEdit() {
+        $('body').on('click', '.edit-card' , function(e){
+            $editCard = $(this).closest('.card');
+            $editMode = true;
+            $('#cardName').val($editCard.data('name'));
+            dialog.dialog("open");
+            return false;        
+        });
+    }
+
+    initEdit();
+
+    function initCreate() {
+        $('.add-new-card').click(function() {
+            $('#cardForm, #cardDescription').val('');
+            $cardContainer = $(this).parent().find('.card-container');
+            dialog.dialog("open");    
+            $editMode = false;
+        }); 
+    }
+
+    initCreate();
+
+
+    // New card container
     var $cardContainer;
 
     function addCard(event) {
         event.preventDefault();
         var name = $('#cardName').val();
-
         var cardHtml = `
-            <div class="card">
-                `+name+`
+            <div class="card" data-name="`+name+`">
+                <a class="edit-card">`+name+`</a>
                 <button class="remove-card">X</button>
             </div>
         `;
@@ -61,7 +87,8 @@ $(document).ready(function() {
         dialog.dialog("close");
     }
 
-    dialog = $('#newCardForm').dialog({
+    // Dialog for card form 
+    dialog = $('#cardForm').dialog({
         autoOpen: false,
         height: 500,
         width: 500,
@@ -71,21 +98,15 @@ $(document).ready(function() {
             Cancel: function() {
                 dialog.dialog("close");
             }
-        }
-        
+        }    
     });
 
-    $('#newCardFormTabs').tabs({
+    // Tabs in dialog 
+    $('#cardFormTabs').tabs({
         event: "mouseover"
     });
 
-    $('.add-new-card').click(function() {
-        dialog.dialog("open");
-        
-        $cardContainer = $(this).parent().find('.card-container');
-
-    }); 
-
+    // Datepicker Plugin
     $('.date-input').dateDropper();
 
 });

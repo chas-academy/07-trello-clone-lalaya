@@ -5,7 +5,16 @@ $(document).ready(function() {
             cursor: "move",
             connectWith: ".card-container",
             helper: "clone",
-            placeholder: "sortable-placeholder",
+            placeholder: "card-placeholder",
+            // highlight effect when card is droped in a list
+            receive: function (event, ui) {
+                ui.item.effect({
+                    effect: "highlight", 
+                    duration: 800,
+                })
+                console.log(event, ui); 
+            }
+        
         });
 
         // Sort list - think this works better than drag and drop
@@ -35,14 +44,14 @@ $(document).ready(function() {
         });
     
         // Remove list on click
-        $('.list').on('click', '.remove-list' , function(e){
+        $('body').on('click', '.list .remove-list' , function(e){
             $(this).closest('.column').remove();
         });
     }
 
     initRemove();
 
-   
+   // Click to add new card or edit them
     var $editMode;
     var $editCard;
 
@@ -112,4 +121,5 @@ $(document).ready(function() {
     $('.date-input').dateDropper();
 
 });
+
 

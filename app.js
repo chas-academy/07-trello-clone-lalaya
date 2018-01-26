@@ -73,18 +73,43 @@ $(document).ready(function() {
     var $cardContainer;
 
     function addCard(event) {
-        event.preventDefault();
         var name = $('#cardName').val();
+        var dueDate = $('#dueDate').val();
+
         var cardHtml = `
             <div class="card" data-name="`+name+`">
-                <a class="edit-card">`+name+`</a>
-                <button class="remove-card">X</button>
+                <div class="card-content">
+                    <a class="edit-card card-name">`+name+`</a>
+                    <span class="content-right">   
+                        <span class="card-due-date">`+dueDate+`</span>
+                        <button class="remove-card">X</button>
+                    </span>
+                </div>
             </div>
         `;
 
         $cardContainer.append(cardHtml);
+    
+    }
+
+    function editCard(event) {
+        var name = $('#cardName').val();
+        var dueDate = $('#dueDate').val();
+        $editCard.find(".card-name").text(name);
+        $editCard.find(".card-due-date").text(dueDate);
+    }
+
+    function saveCard(event){
+        event.preventDefault();
+        if ($editMode) {
+            editCard(event);
+        } else {
+            addCard(event);
+        }
+
         dialog.dialog("close");
     }
+
 
     // Dialog for card form 
     dialog = $('#cardForm').dialog({
@@ -94,7 +119,7 @@ $(document).ready(function() {
         modal: true,
         show: {effect: "drop"},
         buttons: {
-            Save: addCard,
+            Save: saveCard,
             Cancel: function() {
                 dialog.dialog("close");
 

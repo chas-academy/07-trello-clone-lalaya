@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link href="https://fonts.googleapis.com/css?family=Lora|Tinos" rel="stylesheet">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
+    
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
    
@@ -25,12 +25,9 @@
                                 <button class="remove-card">X</button>
                         </div>
                 </div>
-                <div class="add-new">
-                    <form class="new-card" action="index.html">
-                        <input type="text" name="title" placeholder="Please name the card" />
+
                         <button class="add-new-card">ADD NEW CARD</button>
-                     </form>
-                </div>
+
                 
             </div>
         </div>
@@ -44,7 +41,7 @@
                                 <button class="remove-card">X</button>
                         </div>
                 </div>
-
+                <button class="add-new-card">ADD NEW CARD</button>
             </div>
         </div>
 
@@ -57,25 +54,21 @@
                                 <button class="remove-card">X</button>
                         </div>
                 </div>
+                <button class="add-new-card">ADD NEW CARD</button>
             </div>
         </div>
-        <div class="column">
-                <div class="list">
-                    <h2 class="list-header">The Sayonara's 2</h2>
-                    <button class="remove-list">X</button>
-                    <div class="card-container">
-                            <div class="card">
-                                    <button class="remove-card">X</button>
-                            </div>
-                    </div>
-                </div>
-            </div>
+
         <div class="column">
             <div class="list">
                 <button class="add-new-list">ADD NEW LIST</button>
             </div>
         </div>
+    </div>
 
+
+    <div id="newCardForm" style="display: none">
+        <input id="cardName" type="text" placeholder="Card name" />
+        <textarea id="cardDescription" rows="5" placeholder="Description"></textarea>
     </div>
 </body>
 <script src="app.js"></script>

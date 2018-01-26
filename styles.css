@@ -42,7 +42,10 @@ h1 {
   width: 100%;
 }
 
+.card-container {
+    min-height: 3em;
 
+}
 
 .column:not(:last-child) {
   margin-right: 35px;

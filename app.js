@@ -60,7 +60,7 @@ $(document).ready(function() {
 
     function initCreate() {
         $('.add-new-card').click(function() {
-            $('#cardForm, #cardDescription').val('');
+            $('#cardName, #cardDescription').val('');
             $cardContainer = $(this).parent().find('.card-container');
             dialog.dialog("open");    
             $editMode = false;
@@ -93,10 +93,12 @@ $(document).ready(function() {
         height: 500,
         width: 500,
         modal: true,
+        show: {effect: "drop"},
         buttons: {
             Save: addCard,
             Cancel: function() {
                 dialog.dialog("close");
+
             }
         }    
     });

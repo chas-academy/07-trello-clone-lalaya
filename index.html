@@ -25,12 +25,8 @@
             <div class="list">
                 <h2 class="list-header">The To Do's</h2>
                 <button class="remove-list">X</button>
-                <div class="card-container">
-                </div>
-
+                    <div class="card-container"></div>
                 <button class="add-new-card">ADD NEW CARD</button>
-
-
             </div>
         </div>
 
@@ -38,8 +34,7 @@
             <div class="list">
                 <h2 class="list-header">The Doin'</h2>
                 <button class="remove-list">X</button>
-                <div class="card-container">
-                </div>
+                    <div class="card-container"></div>
                 <button class="add-new-card">ADD NEW CARD</button>
             </div>
         </div>
@@ -48,8 +43,7 @@
             <div class="list">
                 <h2 class="list-header">The Sayonara's</h2>
                 <button class="remove-list">X</button>
-                <div class="card-container">
-                </div>
+                    <div class="card-container"></div>
                 <button class="add-new-card">ADD NEW CARD</button>
             </div>
         </div>
@@ -61,21 +55,25 @@
         </div>
     </div>
 
-
     <div id="cardForm" style="display: none">
         <div id="cardFormTabs">
             <ul>
-                <li><a href="#tab-1">Card</a></li>
-                <li><a href="#tab-2">Date</a></li>
-            </ul> 
-        <div id="tab-1">
+                <li>
+                    <a href="#tab-1">Card Info</a>
+                </li>
+                <li>
+                    <a href="#tab-2">Deadline</a>
+                </li>
+            </ul>
+            <div id="tab-1">
                 <input id="cardName" type="text" placeholder="Card name" />
                 <textarea id="cardDescription" rows="5" placeholder="Description"></textarea>
+            </div>
+            <div id="tab-2">
+                <input type="text" class="date-input" />
+            </div>
         </div>
-        <div id="tab-2">
-        <input type="text" class="date-input" />
-        </div>
-    </div>
 </body>
+
 <script src="app.js"></script>
 </html>

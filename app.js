@@ -43,6 +43,7 @@ $(document).ready(function() {
     initRemove();
 
 
+    // Card 
     var $cardContainer;
 
     function addCard(event) {
@@ -57,8 +58,6 @@ $(document).ready(function() {
         `;
 
         $cardContainer.append(cardHtml);
-        
-
         dialog.dialog("close");
     }
 
@@ -73,13 +72,21 @@ $(document).ready(function() {
                 dialog.dialog("close");
             }
         }
-
+        
     });
- 
+
+    $('#newCardFormTabs').tabs({
+        event: "mouseover"
+    });
+
     $('.add-new-card').click(function() {
         dialog.dialog("open");
         
         $cardContainer = $(this).parent().find('.card-container');
 
     }); 
+
+    $('.date-input').dateDropper();
+
 });
+

@@ -45,7 +45,6 @@ h1 {
     min-height: 3em;
     background-color:  rgba(211, 211, 211, 0.2); 
     margin: 10px auto;
-
 }
 
 .column:not(:last-child) {
@@ -68,6 +67,7 @@ h1 {
 .content-right {
   float: right;
 }
+
 .remove-card,
 .remove-list {
   border: none;
@@ -122,10 +122,10 @@ h1 {
 .dateinput {
   width: 100%; 
 }
+
 #cardName {
   display: flex;
   margin-bottom: 1em; 
-
 }
 
 #cardDescription {

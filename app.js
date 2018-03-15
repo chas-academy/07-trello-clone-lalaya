@@ -110,7 +110,6 @@ $(document).ready(function() {
         dialog.dialog("close");
     }
 
-
     // Dialog for card form 
     dialog = $('#cardForm').dialog({
         autoOpen: false,
@@ -135,6 +134,27 @@ $(document).ready(function() {
     // Datepicker Plugin
     $('.date-input').dateDropper();
 
+    // Color Widget
+    var colors = ['#ffd3da',
+    'rgb(82, 122, 146)', 
+    'rgb(95, 52, 77)', 
+    'rgb(255, 178, 133)', 
+    'rgb(169, 236, 253)', 
+    'rgb(53, 138, 117)', 
+    'lightgrey'];
+
+    $("#backgroundColor").color({
+        colors: colors, 
+        targetSelector: "body", 
+        selectedIndex:1
+    });
+
+    $("#buttonColor").color({
+        colors: colors, 
+        targetSelector: ".add-new-card, .add-new-list",
+        selectedIndex:1
+
+    });
 });
 
 

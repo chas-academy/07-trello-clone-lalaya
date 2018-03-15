@@ -14,7 +14,30 @@
 <body>
 
     <button id="backgroundColor">Boomshakalakk background!</button>
-    <button id="buttonColor">Boomshakalaak button!</button>
-    
+    <button id="buttonColor">Boomshakalaak button!</button>   
 </body>
+
+<script>
+    $(document).ready(function() {
+
+        var colors = ['#ffd3da',
+                    'rgb(82, 122, 146)', 
+                    'rgb(95, 52, 77)', 
+                    'rgb(255, 178, 133)', 
+                    'rgb(169, 236, 253)', 
+                    'rgb(53, 138, 117)', 
+                    'lightgrey'];
+
+        $("#mycolor").color({
+            colors: colors, 
+            targetSelector: "body"
+        });
+
+        $("#mycolor2").color({
+            colors: colors, 
+            targetSelector: "button"
+        });
+    });
+    
+</script>
 </html>
